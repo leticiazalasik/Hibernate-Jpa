@@ -27,6 +27,9 @@
 	<h:outputLabel value="Preço"/>
 	<h:inputText value="#{produtoMB.produto.preco}"/>
 	
+	<h:outputLabel value="Número da categoria"/>
+	<h:inputText value="#{produtoMB.produto.fk_produto}"/>
+	
 	<h:outputLabel/>
 	<h:commandButton value="Salvar" action="#{produtoMB.salvar}"/>
 	<h:commandButton value="Cancelar" action="#{produtoMB.listar}"/>

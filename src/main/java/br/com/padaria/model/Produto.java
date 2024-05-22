@@ -23,6 +23,7 @@ public class Produto implements Serializable {
 	private String descricao;
 	private boolean status; 
 	private Double preco;
+	private int fk_produto; 
 
 	
 	public Produto() {
@@ -83,6 +84,17 @@ public class Produto implements Serializable {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	
+
+	public int getFk_produto() {
+		return fk_produto;
+	}
+
+
+	public void setFk_produto(int fk_produto) {
+		this.fk_produto = fk_produto;
 	}
 
 
