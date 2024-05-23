@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Padoka</title>
+</h:head>
+<h:body>
+
+<h:form> </h:form>
+	<h2>Lista de produtos</h2>
+
+<h:dataTable value="#{produtoMb.produtos}" var="c"> 
+
+<h:column headerText="Id"> 
+<f:facet name="header"> ID</f:facet>
+<h:outputText value="#{c.id}"/>
+</h:column>
+
+<h:column headerText="Nome"> 
+<f:facet name="header"> Nome</f:facet>
+<h:outputText value="#{c.nome}"/>
+</h:column>
+
+<h:column headerText="Descrição"> 
+<f:facet name="header"> Descrição</f:facet>
+<h:outputText value="#{c.descricao}"/>
+</h:column>
+
+<h:column headerText="Status"> 
+<f:facet name="header"> Status</f:facet>
+<h:outputText value="#{c.status}"/>
+</h:column>
+
+<h:column headerText="Preço"> 
+<f:facet name="header"> Preço</f:facet>
+<h:outputText value="#{c.preco}"/>
+</h:column>
+
+<h:column headerText="Categoria"> 
+<f:facet name="header"> Categoria</f:facet>
+<h:outputText value="#{c.fk_categoria}"/>
+</h:column>
+
+<h:column headerText="Ações"> 
+<f:facet name="header">Ações</f:facet>
+
+<h:button value="Editar" outcome="/produto/editar.xhtml"> 
+<f:param name="id" value="#{c.id}"/> 
+</h:button>
+
+<h:commandButton value="Excluir" action="#{produtoMB.deletar(c)}"/>
+
+</h:column>
+</h:dataTable>
+
+<h:commandButton value="Menu" action="/menu.xhtml"/>
+
+ </h:form>
+</h:body>
+</html>
